@@ -19,4 +19,5 @@ RUN go test -cover -v ./...
 
 FROM alpine:latest
 COPY --from=builder /bin/webmtr /bin/webmtr
+RUN apk add --no-cache tzdata
 ENTRYPOINT ["/bin/webmtr"]
