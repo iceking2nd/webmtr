@@ -78,7 +78,7 @@ func MTR(c *gin.Context) {
 	if _, exist := c.GetQuery("ptr_lookup"); exist {
 		params.PTR_LOOKUP = true
 	}
-	if _, exist := c.GetQuery("json"); exist {
+	if c.Request.Header.Get("Accept") == "application/json" {
 		params.JsonFmt = true
 	}
 	if srcAddr, exist := c.GetQuery("src_addr"); exist {
