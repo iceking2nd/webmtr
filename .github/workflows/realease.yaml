@@ -23,5 +23,5 @@ jobs:
           goarch: ${{ matrix.goarch }}
           build_flags: -v
           binary_name: "webmtr"
-          extra_files: contrib README.md LICENSE.txt
+          extra_files: README.md LICENSE
           ldflags: -X "github.com/iceking2nd/webmtr/global.Version=${{ env.APP_VERSION }}" -X "github.com/iceking2nd/webmtr/global.BuildTime=${{ env.BUILD_TIME }}" -X github.com/iceking2nd/webmtr/global.GitCommit=${{ github.sha }}

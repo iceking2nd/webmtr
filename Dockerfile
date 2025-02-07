@@ -14,7 +14,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
     go build \
     -trimpath \
     -ldflags="-extldflags \"-static\" -X 'github.com/iceking2nd/webmtr/global.Version=${VERSION}-docker' -X 'github.com/iceking2nd/webmtr/global.BuildTime=${BUILD_TIME}' -X github.com/iceking2nd/webmtr/global.GitCommit=${SHA}" \
-    -o /bin/lsf
+    -o /bin/webmtr
 RUN go test -cover -v ./...
 
 FROM alpine:latest
